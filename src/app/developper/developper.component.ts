@@ -13,18 +13,18 @@ export class DevelopperComponent implements OnInit {
     nomComplet: "Dev. Hicham Oussama Saffih",
     isHappy: true
   }
-  // devs: Developper[] = DEVELOPPEURS;
-  // selectedDev?: Developper;
+  devs: Developper[] = DEVELOPPEURS;
+  selectedDev?: Developper;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    // this.devs.push(this.developper);
+    this.devs.push(this.developper);
   }
 
-  // onSelect(dev: Developper) {
-  //   this.selectedDev = dev;
-  // }
+  onSelect(dev: Developper) {
+    this.selectedDev = dev;
+  }
 
 }
