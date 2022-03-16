@@ -71,16 +71,7 @@
                         </table>
                     </div>
                     <div class="col-md-4">
-                        <h2>Détails :</h2>
-                        <div *ngIf="selectedDev">
-                            <u>
-                                {{selectedDev.nomComplet | uppercase}} - #{{selectedDev.id}}
-                            </u>
-                            <div>
-                                <label for="dev-name">Modifier le nom : </label>
-                                <input id="dev-name" [(ngModel)]="selectedDev.nomComplet" placeholder="Nom Complet">
-                            </div>
-                        </div>
+                        <app-developper-detail [dev]="selectedDev" ></app-developper-detail>
                     </div>
                 </div>
             </div>
