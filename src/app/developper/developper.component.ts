@@ -20,7 +20,7 @@ export class DevelopperComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.devs.push(this.developper);
+    this.devs.unshift(this.developper);
   }
 
   onSelect(dev: Developper) {

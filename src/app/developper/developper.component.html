@@ -1,57 +1,89 @@
 <h2>
     Développeurs chez SQLI :
 </h2>
-<p>
-    Moi :
-    <span>
-        #Dev{{developper.id}}
-        -
-        {{developper.nomComplet}}
-    </span>
-</p>
-<div>
-    <label for="nomComplet">nom complet: </label>
-    <input id="nomComplet" [(ngModel)]="developper.nomComplet" placeholder="nomComplet">
-</div>
-
-<div *ngIf="selectedDev">
-    <h2>{{selectedDev.nomComplet | uppercase}} Details</h2>
-    <div>id: {{selectedDev.id}}</div>
-    <div>
-        <label for="dev-name">Dev name: </label>
-        <input id="dev-name" [(ngModel)]="selectedDev.nomComplet" placeholder="Nom Complet">
-    </div>
-</div>
-
-<br>
-
-<div>
-    <table id="devs">
-        <thead>
-            <tr>
-                <th>#id</th>
-                <th>Nom Complet</th>
-                <th>Satisfaction</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dev of devs" [class.selected]="dev === selectedDev">
-                <td>
-                    <button type="button" (click)="onSelect(dev)">
-                        <span class="badge">
-                            {{ dev.id }}
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <span class="name">
-                        {{ dev.nomComplet }}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    à propos de moi !
+                </div>
+            </div>
+            <div class="card-body">
+                <p>
+                    Je suis :
+                    <span [ngStyle]="{'background': 'yellow'}">
+                        {{developper.nomComplet}}
                     </span>
-                </td>
-                <td>
-                    {{ dev.isHappy ? "✅" : "❌" }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    <br>
+                    Je suis un Developpeur Full-Stack .Net
+                    mon identifiant est : #Dev{{developper.id}}
+                    <br>
+                    Depuis le input:text suivant, je peut modifier mon nom complet, car il est liée "bindé" avec
+                    l'attribut de
+                    l'objet en question et concerné ..
+                </p>
+                <div class="form-group">
+                    <label for="nomComplet">Nom complet : </label>
+                    <input id="nomComplet" class="form-control" [(ngModel)]="developper.nomComplet"
+                        placeholder="nomComplet">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 mt-1">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Mon équipe et moi 👏
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <table id="devs" class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>#id</th>
+                                    <th>Nom Complet</th>
+                                    <th>Est satisfé ?</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let dev of devs" [class.selected]="dev === selectedDev" class="text-center">
+                                    <td>
+                                        {{ dev.id }}
+                                    </td>
+                                    <td>
+                                        {{ dev.nomComplet }}
+                                    </td>
+                                    <td>
+                                        {{ dev.isHappy ? "✅" : "❌" }}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" type="button" (click)="onSelect(dev)">
+                                            info
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Détails :</h2>
+                        <div *ngIf="selectedDev">
+                            <u>
+                                {{selectedDev.nomComplet | uppercase}} - #{{selectedDev.id}}
+                            </u>
+                            <div>
+                                <label for="dev-name">Modifier le nom : </label>
+                                <input id="dev-name" [(ngModel)]="selectedDev.nomComplet" placeholder="Nom Complet">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

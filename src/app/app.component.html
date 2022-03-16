@@ -1,31 +1,43 @@
-<h1>
-  <u>
-    {{title + ' !'}}
-  </u>
-</h1>
-<div id="img_container">
-  <img src="https://th.bing.com/th/id/OIP.WrEOenCbVK90dm8qG1bilgHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
-    alt="Logo de SQLI" (mouseenter)="mouseOverMe($event)">
-  <legend>hover the image</legend>
-  <br>
-  <button (click)="thanks()" class="btn btn-success" #click_me_button>
-    Click me !!
-  </button>
+<app-my-navbar></app-my-navbar>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <h1><u>{{title + ' !'}}</u></h1>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://th.bing.com/th/id/OIP.WrEOenCbVK90dm8qG1bilgHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+            alt="Logo de SQLI" (mouseenter)="mouseOverMe($event)">
+          <legend>hover the image</legend>
+        </div>
+        <div class="col-md-8">
+          <p>
+            {{ reference }} est un groupe européen de services numériques spécialisé dans la conception, le
+            développement
+            et le
+            déploiement
+            de dispositifs digitaux créateurs d’expérience unifiée. Le groupe compte 2100 collaborateurs répartis dans
+            13
+            pays.
+            Son siège se situe en France à Levallois-Perret. Il est coté en bourse sur Euronext Paris depuis le 21
+            juillet
+            {{ anneeBourse }}.
+            Working at SQLI is {{ isCool ? "cool" : "not cool" }}
+          </p>
+          <button (click)="thanks()" class="btn btn-sm btn-primary" #click_me_button>
+            Click me !!
+          </button>
+          <strong>
+            SQLI -{{sloggan}}-
+          </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <app-developper></app-developper>
 </div>
-
-<p>
-  {{ reference }} est un groupe européen de services numériques spécialisé dans la conception, le développement et le
-  déploiement
-  de dispositifs digitaux créateurs d’expérience unifiée. Le groupe compte 2100 collaborateurs répartis dans 13 pays.
-  Son siège se situe en France à Levallois-Perret. Il est coté en bourse sur Euronext Paris depuis le 21 juillet
-  {{ anneeBourse }}.
-  Working at SQLI is {{ isCool ? "cool" : "not cool" }}
-</p>
-<strong>
-  SQLI -{{sloggan}}-
-</strong>
-
-<br>
-<br>
-
-<app-developper></app-developper>
