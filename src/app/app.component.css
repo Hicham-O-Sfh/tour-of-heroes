@@ -2,15 +2,11 @@
    The Css Code of the component goes Here !
 */
 
-h1,
-small {
-   background: blue;
-   color: white; 
-   text-align:center;
+#img_container{
+   display: grid;
+   justify-content: center;
 }
 
-#the_section{
-   margin-top: 15px;
-   border: 2px solid black;
-   text-align: center;
+strong{
+   margin-left: 50%;
 }
