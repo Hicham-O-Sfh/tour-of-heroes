@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DevelopperComponent } from './developper/developper.component';
 import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { DevelopperDetailComponent } from './developper-detail/developper-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DevelopperDetailComponent } from './developper-detail/developper-detail
     AppComponent,
     DevelopperComponent,
     MyNavbarComponent,
-    DevelopperDetailComponent
+    DevelopperDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
