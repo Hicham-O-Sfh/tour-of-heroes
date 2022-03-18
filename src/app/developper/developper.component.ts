@@ -11,23 +11,16 @@ import { MessageService } from '../message.service';
 })
 export class DevelopperComponent implements OnInit {
   devs: Developper[] = [];
-  developper: Developper = { id: 0, nomComplet: "", isHappy: false };
-  selectedDev?: Developper;
+  developper?: Developper;
 
   constructor(
-    private developperService: DevelopperService,
-    private messageService: MessageService
+    private developperService: DevelopperService
   ) {
   }
 
   ngOnInit(): void {
     this.getDevs();
     this.developper = this.devs[0];
-  }
-
-  onSelect(dev: Developper) {
-    this.selectedDev = dev;
-    this.messageService.add(`DevelopperComponent : Le développeur selectionné id=${dev.id}`);
   }
 
   getDevs(): void {

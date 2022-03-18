@@ -10,6 +10,7 @@ import { DevelopperComponent } from './developper/developper.component';
 import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { DevelopperDetailComponent } from './developper-detail/developper-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MessagesComponent } from './messages/messages.component';
     DevelopperComponent,
     MyNavbarComponent,
     DevelopperDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserAnimationsModule,

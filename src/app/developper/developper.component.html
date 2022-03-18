@@ -2,7 +2,7 @@
     Développeurs chez SQLI :
 </h2>
 <div class="row">
-    <div class="col-md-12">
+    <div *ngIf="developper" class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
@@ -51,7 +51,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let dev of devs" [class.selected]="dev === selectedDev" class="text-center">
+                                <tr *ngFor="let dev of devs" class="text-center">
                                     <td>
                                         {{ dev.id }}
                                     </td>
@@ -62,16 +62,15 @@
                                         {{ dev.isHappy ? "✅" : "❌" }}
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-info" type="button" (click)="onSelect(dev)">
-                                            info
-                                        </button>
+                                        <a class="btn btn-sm btn-info" routerLink="/Detail/{{dev.id}}">
+                                            Detail
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="col-md-4">
-                        <app-developper-detail [dev]="selectedDev" ></app-developper-detail>
                     </div>
                 </div>
             </div>

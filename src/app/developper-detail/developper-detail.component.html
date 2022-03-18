@@ -3,8 +3,11 @@
     <u>
         {{dev.nomComplet | uppercase}} - #{{dev.id}}
     </u>
-    <div>
+    <div class="form-group">
         <label for="dev-name">Modifier le nom : </label>
-        <input id="dev-name" [(ngModel)]="dev.nomComplet" placeholder="Nom Complet">
+        <input class="form-control" id="dev-name" [(ngModel)]="dev.nomComplet" placeholder="Nom Complet">
     </div>
 </div>
+<button type="button" (click)="goBack()">
+    Retour
+</button>

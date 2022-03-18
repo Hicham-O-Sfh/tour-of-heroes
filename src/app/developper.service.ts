@@ -14,11 +14,19 @@ export class DevelopperService {
     isHappy: true
   };
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) {
+    [this.developper].concat(DEVELOPPEURS)
+  }
 
   getDevs(): Observable<Developper[]> {
-    const devs = of([this.developper].concat(DEVELOPPEURS));
+    const devs = of(DEVELOPPEURS);
     this.messageService.add('DevelopperService : fetched Developpers');
     return devs;
+  }
+
+  getDev(id: number): Observable<Developper> {
+    const developper = DEVELOPPEURS.find(d => d.id === id)!;
+    this.messageService.add(`DevelopperService : fetched developper ${id}`);
+    return of(developper);
   }
 }
