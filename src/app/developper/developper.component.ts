@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Developper } from '../developper';
-// import { DEVELOPPEURS } from "../developpeurs-sqliens";
 import { DevelopperService } from "../developper.service";
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-developper',
@@ -26,5 +24,7 @@ export class DevelopperComponent implements OnInit {
   getDevs(): void {
     this.developperService.getDevs().subscribe(devs => this.devs = devs);
   }
+
+
 
 }

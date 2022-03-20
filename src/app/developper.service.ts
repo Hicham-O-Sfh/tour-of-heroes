@@ -15,18 +15,18 @@ export class DevelopperService {
   };
 
   constructor(private messageService: MessageService) {
-    [this.developper].concat(DEVELOPPEURS)
+    DEVELOPPEURS.unshift(this.developper);
   }
 
   getDevs(): Observable<Developper[]> {
     const devs = of(DEVELOPPEURS);
-    this.messageService.add('DevelopperService : fetched Developpers');
+    this.messageService.add(`DevelopperService : Données des ${DEVELOPPEURS.length} développeurs importés : ✅ !`);
     return devs;
   }
 
   getDev(id: number): Observable<Developper> {
     const developper = DEVELOPPEURS.find(d => d.id === id)!;
-    this.messageService.add(`DevelopperService : fetched developper ${id}`);
+    this.messageService.add(`DevelopperService : Données du développeurs ##${id} importés : ✅ !`);
     return of(developper);
   }
 }

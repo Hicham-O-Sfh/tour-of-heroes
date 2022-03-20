@@ -1,11 +1,74 @@
-<div *ngIf="messageService.messages.length > 0">
-    <h2>
-        Messages
-    </h2>
-    <button type="button" class="clear" (click)="messageService.clear()">
-        Clear messages
-    </button>
-    <div *ngFor='let message of messageService.messages'>
-        {{message}}
+<footer class="w-100 py-4 flex-shrink-0 bg-primary">
+    <div class="container py-4">
+        <div class="row gy-4 gx-5">
+            <div class="col-md-3">
+                <h5 class="h1 text-white">
+                    <img src="https://th.bing.com/th/id/OIP.WrEOenCbVK90dm8qG1bilgHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+                        width="50" height="50" class="d-inline-block align-top" [ngStyle]="{'border-radius': '50%'}"
+                        alt="">
+                    SQLI.
+                </h5>
+                <p class="small text-white">-Digital Experience- to enjoy and take advantages of it .</p>
+                <p class="small text-white mb-0">
+                    &copy; Copyrights.
+                    <br>
+                    All rights reserved.
+                    <u>
+                        <a class="text-white" target="_blank" href="https://hicham-o-sfh.github.io/My-Portfolio/">
+                            Hicham O-Sfh
+                        </a>
+                    </u>
+                </p>
+            </div>
+            <div class="col-md-5">
+                <div class="accordion" id="the-accordion">
+                    <div class="card rounded">
+                        <div class="card-header" id="headingOne">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                                            data-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                                            LOG des -Messages-
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div class="col-md-2 text-right">
+                                    <button type="button" class="btn btn-sm btn-outline-info pull-right"
+                                        (click)="messageService.clear()" title="clear">
+                                        🗑️
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapse-1" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#the-accordion">
+                            <div class="card-body bg-dark text-white">
+                                <div *ngIf="messageService.messages.length > 0">
+                                    <div *ngFor='let message of messageService.messages'>
+                                        <small>
+                                            > {{message}}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-white mb-3">👏 Newsletter</h5>
+                <p class="small text-white">
+                    Abonnez-vous à notre Newsletter pour ne pas rater nos actualités et rester à jour au niveau de nos
+                    informations !
+                </p>
+                <form action="#">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="text" placeholder="Votre-Email@mail.com 🚀"
+                            aria-describedby="button-addon2">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+</footer>

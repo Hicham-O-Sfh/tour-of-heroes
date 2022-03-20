@@ -1,0 +1,54 @@
+<div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h1><u>{{title + ' !'}}</u></h1>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://th.bing.com/th/id/OIP.WrEOenCbVK90dm8qG1bilgHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+                            alt="Logo de SQLI" (mouseenter)="mouseOverMe($event)">
+                        <legend>
+                            <small>
+                                -hover the image-
+                            </small>
+                        </legend>
+                    </div>
+                    <div class="col-md-8">
+                        <p [ngStyle]="{'font-size': '20px'}">
+                            {{ reference }} est un groupe européen de services numériques spécialisé dans la conception,
+                            le
+                            développement
+                            et le
+                            déploiement
+                            de dispositifs digitaux créateurs d’expérience unifiée. Le groupe compte 2100 collaborateurs
+                            répartis dans
+                            13
+                            pays.
+                            Son siège se situe en France à Levallois-Perret. Il est coté en bourse sur Euronext Paris
+                            depuis
+                            le
+                            21
+                            juillet
+                            {{ anneeBourse }}.
+                            Working at SQLI is {{ isCool ? "cool" : "not cool" }}
+                        </p>
+                        <br>
+                        <strong>
+                            SQLI -{{sloggan}}-
+                        </strong>
+                        <br>
+                        <div class="text-right">
+                            <button (click)="thanks()" class="btn btn-sm btn-success" #click_me_button>
+                                Click me !!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

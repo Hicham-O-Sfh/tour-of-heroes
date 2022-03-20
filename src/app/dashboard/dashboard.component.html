@@ -1,6 +1,13 @@
-<h3>Top Meilleurs développeurs</h3>
-<div class="heroes-menu">
-    <a *ngFor="let dev of devs" routerLink="/Detail/{{ dev.id }}">
-        {{dev.nomComplet}}
-    </a>
+<h3 class="mt-3 text-center">
+    <u>
+        4 Développeurs dotNet 🚀
+    </u>
+</h3>
+
+<div class="row mt-5">
+    <div class="col-md-3" *ngFor="let dev of devs">
+        <a routerLink="/Developpeurs-de-SQLI/Detail/{{ dev.id }}" class="btn btn-sm btn-info">
+            {{dev.nomComplet}}
+        </a>
+    </div>
 </div>

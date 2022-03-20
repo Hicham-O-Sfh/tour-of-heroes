@@ -1,4 +1,3 @@
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
@@ -12,12 +11,12 @@ export class MessageService {
 
   add(message: string): void {
     this.messages.push(message);
-    this.showSuccess(message, "titre de test");
+    this.showSuccess(message, "Trouvé !");
   }
 
   clear(): void {
     this.messages = [];
-    this.showInfo("liste des messages nettoyé !", "titre");
+    this.showInfo("LOG nettoyé !", "Info");
   }
 
   showSuccess(message: string, title: string): void {

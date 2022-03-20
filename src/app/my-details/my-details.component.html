@@ -1,0 +1,29 @@
+<div *ngIf="developper" >
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                à propos de moi !
+            </div>
+        </div>
+        <div class="card-body">
+            <p>
+                Je suis :
+                <span [ngStyle]="{'background': 'yellow'}">
+                    {{developper.nomComplet}}
+                </span>
+                <br>
+                Je suis un Developpeur Full-Stack .Net
+                mon identifiant est : #Dev{{developper.id}}
+                <br>
+                Depuis le input:text suivant, je peut modifier mon nom complet, car il est liée "bindé" avec
+                l'attribut de
+                l'objet en question et concerné ..
+            </p>
+            <div class="form-group">
+                <label for="nomComplet">Nom complet : </label>
+                <input id="nomComplet" class="form-control" [(ngModel)]="developper.nomComplet"
+                    placeholder="nomComplet">
+            </div>
+        </div>
+    </div>
+</div>

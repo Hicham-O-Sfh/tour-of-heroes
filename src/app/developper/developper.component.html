@@ -1,78 +1,54 @@
-<h2>
-    Développeurs chez SQLI :
+<h2 class="text-center mt-3">
+    <u>
+        Développeurs chez SQLI :
+    </u>
 </h2>
-<div class="row">
-    <div *ngIf="developper" class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    à propos de moi !
-                </div>
-            </div>
-            <div class="card-body">
-                <p>
-                    Je suis :
-                    <span [ngStyle]="{'background': 'yellow'}">
-                        {{developper.nomComplet}}
-                    </span>
-                    <br>
-                    Je suis un Developpeur Full-Stack .Net
-                    mon identifiant est : #Dev{{developper.id}}
-                    <br>
-                    Depuis le input:text suivant, je peut modifier mon nom complet, car il est liée "bindé" avec
-                    l'attribut de
-                    l'objet en question et concerné ..
-                </p>
-                <div class="form-group">
-                    <label for="nomComplet">Nom complet : </label>
-                    <input id="nomComplet" class="form-control" [(ngModel)]="developper.nomComplet"
-                        placeholder="nomComplet">
-                </div>
-            </div>
-        </div>
+<div class="row mt-1">
+    <div class="col-md-4 mt-5">
+        <app-my-details [developper]="developper"></app-my-details>
     </div>
-    <div class="col-md-12 mt-1">
+    <div class="col-md-8 mt-5">
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
-                    Mon équipe et moi 👏
+                    Mon équipe et moi ❤️
                 </div>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <table id="devs" class="table table-bordered table-striped">
-                            <thead>
-                                <tr class="text-center">
-                                    <th>#id</th>
-                                    <th>Nom Complet</th>
-                                    <th>Est satisfé ?</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let dev of devs" class="text-center">
-                                    <td>
-                                        {{ dev.id }}
-                                    </td>
-                                    <td>
-                                        {{ dev.nomComplet }}
-                                    </td>
-                                    <td>
-                                        {{ dev.isHappy ? "✅" : "❌" }}
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-sm btn-info" routerLink="/Detail/{{dev.id}}">
-                                            Detail
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                </div>
+                <table id="devs" class="table table-bordered table-striped w-100">
+                    <thead>
+                        <tr class="text-center">
+                            <th>#id</th>
+                            <th>Nom Complet</th>
+                            <th>Est satisfé ?</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let dev of devs" class="text-center">
+                            <td>
+                                {{ dev.id }}
+                            </td>
+                            <td>
+                                {{ dev.nomComplet }}
+                            </td>
+                            <td>
+                                {{ dev.isHappy ? "✅" : "❌" }}
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-primary">
+                                    🖋️
+                                    Modifier
+                                </a>
+                                |
+                                <a class="btn btn-sm btn-info" routerLink="/Developpeurs-de-SQLI/Detail/{{dev.id}}">
+                                    📜
+                                    Detail
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

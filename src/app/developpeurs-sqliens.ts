@@ -1,14 +1,12 @@
 import { Developper } from './developper';
 
 export const DEVELOPPEURS: Developper[] = [
-    { id: 11, isHappy: true, nomComplet: 'Dev. Nice' },
-    { id: 12, isHappy: true, nomComplet: 'Dev. Narco' },
-    { id: 13, isHappy: true, nomComplet: 'Dev. Bombasto' },
-    { id: 14, isHappy: true, nomComplet: 'Dev. Celeritas' },
-    { id: 15, isHappy: true, nomComplet: 'Dev. Magneta' },
-    { id: 16, isHappy: true, nomComplet: 'Dev. RubberMan' },
-    { id: 17, isHappy: true, nomComplet: 'Dev. Dynama' },
-    { id: 18, isHappy: true, nomComplet: 'Dev. IQ' },
-    { id: 19, isHappy: true, nomComplet: 'Dev. Magma' },
-    { id: 20, isHappy: true, nomComplet: 'Dev. Tornado' }
+    { id: 2, isHappy: true, nomComplet: 'Dev. Nada BARBOUR' },
+    { id: 3, isHappy: true, nomComplet: 'Dev. Kawtar Smougueni' },
+    { id: 4, isHappy: true, nomComplet: 'Dev. Othmane Essoufi' },
+    { id: 5, isHappy: true, nomComplet: 'Dev. Yassine Chihab' },
+    { id: 6, isHappy: true, nomComplet: 'Dev. HAMZA ELAISSAOUI' },
+    { id: 7, isHappy: true, nomComplet: 'Dev. Ilyass Khadem' },
+    { id: 8, isHappy: true, nomComplet: 'Dev. Ayoub Hanani' },
+    { id: 9, isHappy: true, nomComplet: 'Dev. Mouâad HAFID' },
 ];

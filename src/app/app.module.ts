@@ -11,6 +11,8 @@ import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { DevelopperDetailComponent } from './developper-detail/developper-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyDetailsComponent } from './my-details/my-details.component';
+import { SqliPresentationComponent } from './sqli-presentation/sqli-presentation.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MyNavbarComponent,
     DevelopperDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    MyDetailsComponent,
+    SqliPresentationComponent
   ],
   imports: [
     BrowserAnimationsModule,
