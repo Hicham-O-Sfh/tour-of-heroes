@@ -1,0 +1,11 @@
+<form class="form-inline my-2 my-lg-0" id="search-component">
+    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" (input)="search(searchBox.value)"
+        #searchBox>
+    <ul class="search-result">
+        <li *ngFor="let dev of devs$ | async">
+            <a class="text-white" routerLink="Developpeurs-de-SQLI/Detail/{{dev.id}}">
+                {{dev.nomComplet}}
+            </a>
+        </li>
+    </ul>
+</form>

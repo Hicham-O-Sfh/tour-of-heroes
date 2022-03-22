@@ -1,16 +1,17 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand">
             <img src="https://th.bing.com/th/id/OIP.WrEOenCbVK90dm8qG1bilgHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
                 width="30" height="30" class="d-inline-block align-top" alt="">
             SQLI
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link text-white" routerLink="/Dashboard">Dashboard</a>
                 </li>
@@ -21,6 +22,9 @@
                     <a class="nav-link text-white" routerLink="/Developpeurs-de-SQLI">Devs</a>
                 </li>
             </ul>
+
+            <app-developper-recherche></app-developper-recherche>
         </div>
     </nav>
+
 </header>

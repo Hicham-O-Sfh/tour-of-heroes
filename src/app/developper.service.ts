@@ -70,4 +70,16 @@ export class DevelopperService {
       catchError(this.handleError<Developper>('deleteDev'))
     );
   }
+
+  searchDevs(terme: string): Observable<Developper[]> {
+    if (!terme.trim()) {
+      return of([]);
+    }
+    return this.http.get<Developper[]>(`${this.devsUrl}/?nomComplet=${terme}`).pipe(
+      tap(result => result.length ?
+        this.log(`✅ Développeur(s) tel que "${terme}" trouvé`) :
+        this.log(`👌 Aucun Développeurs tel que "${terme}" n'a été trouvé`)),
+      catchError(this.handleError<Developper[]>('searchDevs', []))
+    );
+  }
 }

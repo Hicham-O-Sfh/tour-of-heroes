@@ -16,6 +16,7 @@ import { SqliPresentationComponent } from './sqli-presentation/sqli-presentation
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { DevelopperRechercheComponent } from './developper-recherche/developper-recherche.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     MessagesComponent,
     DashboardComponent,
     MyDetailsComponent,
-    SqliPresentationComponent
+    SqliPresentationComponent,
+    DevelopperRechercheComponent
   ],
   imports: [
     BrowserAnimationsModule,
