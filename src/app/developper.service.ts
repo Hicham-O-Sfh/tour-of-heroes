@@ -62,4 +62,12 @@ export class DevelopperService {
       catchError(this.handleError<Developper>('addDev'))
     );
   }
+
+  deleteDev(id: number): Observable<Developper> {
+    const url = `${this.devsUrl}/${id}`;
+    return this.http.delete<Developper>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`✅ Développeur supprimé avec succès id=${id}`)),
+      catchError(this.handleError<Developper>('deleteDev'))
+    );
+  }
 }

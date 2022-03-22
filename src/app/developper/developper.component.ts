@@ -40,4 +40,9 @@ export class DevelopperComponent implements OnInit {
         this.devs.push(dev);
       });
   }
+
+  delete(dev: Developper): void {
+    this.devs = this.devs.filter(d => d !== dev);
+    this.developperService.deleteDev(dev.id).subscribe();
+  }
 }
