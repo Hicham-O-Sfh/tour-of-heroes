@@ -31,4 +31,13 @@ export class DevelopperComponent implements OnInit {
         this.developper = this.devs[0]
       });
   }
+
+  add(nomComplet: string): void {
+    nomComplet = nomComplet.trim();
+    if (!nomComplet) return;
+    this.developperService.addDev({ nomComplet } as Developper)
+      .subscribe(dev => {
+        this.devs.push(dev);
+      });
+  }
 }

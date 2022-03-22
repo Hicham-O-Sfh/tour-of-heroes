@@ -51,8 +51,15 @@ export class DevelopperService {
 
   updateDev(developper: Developper): Observable<any> {
     return this.http.put(this.devsUrl, developper, this.httpOptions).pipe(
-      tap(_ => this.log(`updated dev id=${developper.id}`)),
+      tap(_ => this.log(`✅ Développeur mis à jour avec succès id=${developper.id}`)),
       catchError(this.handleError<any>('updateDev'))
+    );
+  }
+
+  addDev(dev: Developper): Observable<Developper> {
+    return this.http.post<Developper>(this.devsUrl, dev, this.httpOptions).pipe(
+      tap((newDev: Developper) => this.log(`✅ Développeur ajouté avec succès id=${newDev.id}`)),
+      catchError(this.handleError<Developper>('addDev'))
     );
   }
 }
