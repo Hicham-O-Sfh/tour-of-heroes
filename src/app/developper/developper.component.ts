@@ -27,7 +27,6 @@ export class DevelopperComponent implements OnInit {
       .getDevs()
       .subscribe(devs => {
         this.devs = devs;
-        console.log(devs);
         this.developper = this.devs[0]
       });
   }

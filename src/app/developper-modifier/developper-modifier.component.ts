@@ -5,11 +5,12 @@ import { Developper } from '../developper';
 import { DevelopperService } from '../developper.service';
 
 @Component({
-  selector: 'app-developper-detail',
-  templateUrl: './developper-detail.component.html',
-  styleUrls: ['./developper-detail.component.css']
+  selector: 'app-developper-modifier',
+  templateUrl: './developper-modifier.component.html',
+  styleUrls: ['./developper-modifier.component.css']
 })
-export class DevelopperDetailComponent implements OnInit {
+export class DevelopperModifierComponent implements OnInit {
+
   dev?: Developper;
 
   constructor(
@@ -31,4 +32,12 @@ export class DevelopperDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    if (this.dev) {
+      this.developperService.updateDev(this.dev)
+        .subscribe(() => this.goBack());
+    }
+  }
 }
+

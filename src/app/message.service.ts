@@ -20,7 +20,9 @@ export class MessageService {
   }
 
   showSuccess(message: string, title: string): void {
-    this.toastr.success(message, title);
+    this.toastr.success(message, title,{
+      toastClass : "ngx-toastr mt-5"
+    });
   }
 
   showInfo(message: string, title: string): void {

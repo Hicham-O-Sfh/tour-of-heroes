@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Developper } from './developper';
-import { DEVELOPPEURS } from './developpeurs-sqliens';
 import { Observable, of } from 'rxjs';
 import { MessageService } from "./message.service";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +26,7 @@ export class DevelopperService {
     return this
       .http.get<Developper[]>(this.devsUrl)
       .pipe(
-        tap(_ => this.log(`✅ Données des ${DEVELOPPEURS.length} développeurs importés !`)),
+        tap(_ => this.log(`✅ Données des ${_.length} développeurs importés !`)),
         catchError(this.handleError<Developper[]>('getDevs', []))
       );
   }
@@ -78,7 +77,8 @@ export class DevelopperService {
     return this.http.get<Developper[]>(`${this.devsUrl}/?nomComplet=${terme}`).pipe(
       tap(result => result.length ?
         this.log(`✅ Développeur(s) tel que "${terme}" trouvé`) :
-        this.log(`👌 Aucun Développeurs tel que "${terme}" n'a été trouvé`)),
+        this.log(`👌 Aucun Développeurs tel que "${terme}" n'a été trouvé`)
+      ),
       catchError(this.handleError<Developper[]>('searchDevs', []))
     );
   }

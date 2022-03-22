@@ -1,0 +1,27 @@
+<button type="button" (click)="goBack()" class="btn btn-sm btn-primary mt-2">
+    &lt; Retour
+</button>
+
+<h2 class="text-center">
+    Détails :
+</h2>
+<div *ngIf="dev">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">
+                <u>
+                    > {{dev.nomComplet | uppercase}} - #{{dev.id}}
+                </u>
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="mb-0" for="dev-name">Modifier le nom : </label>
+                <input class="form-control" id="dev-name" [(ngModel)]="dev.nomComplet" placeholder="Nom Complet">
+            </div>
+            <button class="btn btn-success" type="button" (click)="save()">
+                Enregistrer
+            </button>
+        </div>
+    </div>
+</div>

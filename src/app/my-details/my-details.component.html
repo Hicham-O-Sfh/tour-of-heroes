@@ -1,4 +1,4 @@
-<div *ngIf="developper" >
+<div *ngIf="developper">
     <div class="card">
         <div class="card-header">
             <div class="card-title">
@@ -12,18 +12,19 @@
                     {{developper.nomComplet}}
                 </span>
                 <br>
-                Je suis un Developpeur Full-Stack .Net
+                Je suis un Développeur Full-Stack .Net toujours passionné à apprendre du nouveau 😎💻,
                 mon identifiant est : #Dev{{developper.id}}
                 <br>
-                Depuis le input:text suivant, je peut modifier mon nom complet, car il est liée "bindé" avec
-                l'attribut de
-                l'objet en question et concerné ..
+                <br>
+                🙋‍♂️Depuis le input:text suivant, je peut modifier mon nom complet, car il est liée "bindé" 👌 avec
+                l'attribut de l'objet en question et concerné ..
             </p>
             <div class="form-group">
-                <label for="nomComplet">Nom complet : </label>
+                <label for="nomComplet" class="mb-0">Mon nom complet : </label>
                 <input id="nomComplet" class="form-control" [(ngModel)]="developper.nomComplet"
                     placeholder="nomComplet">
             </div>
+            <small>🪄 ✨✨2 way binding✨✨</small>
         </div>
     </div>
 </div>

@@ -1,24 +1,27 @@
 <h2 class="text-center mt-3">
     <u>
-        Développeurs chez SQLI :
+        🙋‍♀️ Développeurs chez SQLI 🙋‍♂️
     </u>
 </h2>
 <div class="row mt-1">
     <div class="col-md-4 mt-5">
-        <!-- <app-my-details [developper]="developper"></app-my-details> -->
-        <div>
-            <label for="new-hero">Hero name: </label>
-            <input id="new-hero" #heroName />
-            <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-                Add hero
-            </button>
-        </div>
+        <app-my-details [developper]="developper"></app-my-details>
     </div>
     <div class="col-md-8 mt-5">
         <div class="card">
             <div class="card-header">
-                <div class="card-title">
-                    Mon équipe et moi ❤️
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card-title">
+                            Mon équipe et moi ❤️
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <button class="btn btn-sm btn-success pull-right" data-toggle="modal"
+                            data-target="#ajout-developpeur">
+                            ➕ Nouveau
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="card-body">
@@ -48,9 +51,10 @@
                                     🗑️
                                 </button>
                                 |
-                                <button type="button" class="btn btn-sm btn-primary" title="Modifier">
+                                <a class="btn btn-sm btn-primary" routerLink="/Developpeurs-de-SQLI/Modifier/{{dev.id}}"
+                                    title="Modifier">
                                     🖋️
-                                </button>
+                                </a>
                                 |
                                 <a class="btn btn-sm btn-info" routerLink="/Developpeurs-de-SQLI/Detail/{{dev.id}}"
                                     title="Détail">
@@ -60,6 +64,37 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="ajout-developpeur">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Ajout de nouveau développeur
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="new-developper">Nom complet : </label>
+                    <input class="form-control" placeholder="Nom Complet du Développeur" id="new-developper"
+                        #developper_nom_complet />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Annuler
+                </button>
+                <button type="button" class="btn btn-primary"
+                    (click)="add(developper_nom_complet.value); developper_nom_complet.value=''">
+                    ✅ Ajouter
+                </button>
             </div>
         </div>
     </div>

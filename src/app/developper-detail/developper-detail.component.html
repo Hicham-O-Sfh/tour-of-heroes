@@ -3,17 +3,57 @@
 </button>
 
 <h2 class="text-center">
-    Détails :
+    Détails
 </h2>
 <div *ngIf="dev">
-    <h3 class="text-center">
-        <u>
-            > {{dev.nomComplet | uppercase}} - #{{dev.id}}
-        </u>
-    </h3>
-    <div class="form-group">
-        <label for="dev-name">Modifier le nom : </label>
-        <input class="form-control" id="dev-name" [(ngModel)]="dev.nomComplet" placeholder="Nom Complet">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">
+                <u>
+                    > {{dev.nomComplet | uppercase}} - ##{{dev.id}}
+                </u>
+            </h3>
+        </div>
+        <div class="col-md-4 text-center mt-4">
+            <img class="border border-dark rounded w-100" src="http://wfhutch.github.io/images/logo-c-asp-net_0.jpg"
+                alt="dotNet & C#">
+        </div>
+        <div class="col-md-8 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    Détails du développeur 💻
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Nom complet : </label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                                [value]="dev.nomComplet">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">GUID : </label>
+                        <div class="col-sm-9">
+                            ##{{ dev.id }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Satisfé : </label>
+                        <div class="col-sm-9">
+                            {{ dev.isHappy ? '✅' : '❌' }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Technologies : </label>
+                        <div class="col-sm-9">
+                            <span class="badge badge-pill badge-primary mr-1" *ngFor="let tech of dev.technologies">
+                                {{ tech }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="button" (click)="save()">save</button>
 </div>

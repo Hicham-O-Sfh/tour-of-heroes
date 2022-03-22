@@ -11,20 +11,24 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" routerLink="/Dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" routerLink="/Presentation-de-SQLI">Présentation</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" routerLink="/Developpeurs-de-SQLI">Devs</a>
-                </li>
-            </ul>
-
-            <app-developper-recherche></app-developper-recherche>
+            <div class="row w-100">
+                <div class="col-md-4">
+                    <ul class="navbar-nav mr-">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" routerLink="/Dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" routerLink="/Presentation-de-SQLI">Présentation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" routerLink="/Developpeurs-de-SQLI">Devs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <app-developper-recherche></app-developper-recherche>
+                </div>
+            </div>
         </div>
     </nav>
-
 </header>
