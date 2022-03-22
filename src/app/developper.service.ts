@@ -3,30 +3,56 @@ import { Developper } from './developper';
 import { DEVELOPPEURS } from './developpeurs-sqliens';
 import { Observable, of } from 'rxjs';
 import { MessageService } from "./message.service";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DevelopperService {
-  developper: Developper = {
-    id: 1,
-    nomComplet: "Dev. Hicham Oussama Saffih",
-    isHappy: true
+  private devsUrl = 'api/developpers';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) { }
 
-  constructor(private messageService: MessageService) {
-    DEVELOPPEURS.unshift(this.developper);
+  private log(message: string) {
+    this.messageService.add(`DevelopperService : ${message}`);
   }
 
   getDevs(): Observable<Developper[]> {
-    const devs = of(DEVELOPPEURS);
-    this.messageService.add(`DevelopperService : Données des ${DEVELOPPEURS.length} développeurs importés : ✅ !`);
-    return devs;
+    return this
+      .http.get<Developper[]>(this.devsUrl)
+      .pipe(
+        tap(_ => this.log(`✅ Données des ${DEVELOPPEURS.length} développeurs importés !`)),
+        catchError(this.handleError<Developper[]>('getDevs', []))
+      );
   }
 
   getDev(id: number): Observable<Developper> {
-    const developper = DEVELOPPEURS.find(d => d.id === id)!;
-    this.messageService.add(`DevelopperService : Données du développeurs ##${id} importés : ✅ !`);
-    return of(developper);
+    this.messageService.add(`DevelopperService : ✅ Données du développeurs ##${id} importés !`);
+    const url = `${this.devsUrl}/${id}`;
+    return this.http.get<Developper>(url).pipe(
+      tap(_ => this.log(`fetched developper id=${id}`)),
+      catchError(this.handleError<Developper>(`developper id=${id}`))
+    )
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.log(error);
+      this.log(` ❌ ${operation} Erreur : ${error.message}`);
+      return of(result as T);
+    };
+  }
+
+  updateDev(developper: Developper): Observable<any> {
+    return this.http.put(this.devsUrl, developper, this.httpOptions).pipe(
+      tap(_ => this.log(`updated dev id=${developper.id}`)),
+      catchError(this.handleError<any>('updateDev'))
+    );
   }
 }

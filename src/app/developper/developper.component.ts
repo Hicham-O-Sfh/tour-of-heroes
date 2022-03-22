@@ -22,9 +22,13 @@ export class DevelopperComponent implements OnInit {
   }
 
   getDevs(): void {
-    this.developperService.getDevs().subscribe(devs => this.devs = devs);
+    this
+      .developperService
+      .getDevs()
+      .subscribe(devs => {
+        this.devs = devs;
+        console.log(devs);
+        this.developper = this.devs[0]
+      });
   }
-
-
-
 }

@@ -13,7 +13,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyDetailsComponent } from './my-details/my-details.component';
 import { SqliPresentationComponent } from './sqli-presentation/sqli-presentation.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,10 @@ import { SqliPresentationComponent } from './sqli-presentation/sqli-presentation
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
 
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     BrowserModule,
     AppRoutingModule,
     FormsModule,

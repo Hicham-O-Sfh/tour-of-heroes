@@ -24,14 +24,18 @@ export class DevelopperDetailComponent implements OnInit {
 
   getDev(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(
-      id
-    );
     this.developperService.getDev(id)
       .subscribe(dev => this.dev = dev);
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.dev) {
+      this.developperService.updateDev(this.dev)
+        .subscribe(() => this.goBack());
+    }
   }
 }
